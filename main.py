@@ -10,12 +10,12 @@ import xlrd;
 print("hello");
 
 ##Importando o data set
-url= ('C:\Users\igor_\Documents\trabAI')
+url= ('https://github.com/igorgabrig/Primeiro-exemplo-scatter-plot/blob/main/arq/euro2020.csv?raw=true')
 df= pd.read_excel(url)
 df.head()
 
 df_sample = df.sample(n=1000)
-fig  = px.scatter(df_sample, x = 'gdpPercap', hover_name = "country", opacity=0.5 ,y = 'lifeExp', log_x = True, width = 800, facet_col = 'continent')
+fig  = px.scatter(df_sample, x = 'Goals', hover_name = "Player", opacity=0.5 ,y = 'Total attempts', log_x = True, width = 800)
 fig.update_traces(marker = dict(size = 12, line=dict(width = 2)), selector = dict(mode = 'markers'))
 fig.update_layout(title = 'Logaritmo do PIB per capita X Expectativa de vida')
 fig.update_xaxes(title = 'Log(PIB per capita)')
