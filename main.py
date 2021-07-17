@@ -15,11 +15,16 @@ url= ('https://github.com/igorgabrig/Primeiro-exemplo-scatter-plot/blob/main/arq
 df= pd.read_excel(url)
 df.head()
 
-#print(df)
+print(df['Metascore'])
 
 #sns.pairplot(df, height=3.0)
 #plt.show()
 
 
-df.boxplot(column=['Rate','Metascore','Minutes'])
+df.boxplot(column='Rate')
+plt.show()
+
+df.boxplot(column='Metascore')
+
+#df.boxplot(column='Budget')
 plt.show()
