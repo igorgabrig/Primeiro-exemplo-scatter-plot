@@ -15,7 +15,7 @@ url= ('https://github.com/igorgabrig/Primeiro-exemplo-scatter-plot/blob/main/arq
 df= pd.read_excel(url)
 df.head()
 
-print(df['Budget'])
+print(df['Metascore'])
 
 #sns.pairplot(df, height=3.0)
 #plt.show()
