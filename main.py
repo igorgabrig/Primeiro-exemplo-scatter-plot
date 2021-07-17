@@ -11,12 +11,15 @@ import xlrd;
 print("hello");
 
 ##Importando o data set
-url= ('https://github.com/igorgabrig/Primeiro-exemplo-scatter-plot/blob/main/arq/euro2020.xlsx?raw=true')
+url= ('https://github.com/igorgabrig/Primeiro-exemplo-scatter-plot/blob/main/arq/db.xlsx?raw=true')
 df= pd.read_excel(url)
 df.head()
 
 #print(df)
 
-sns.pairplot(df)
+#sns.pairplot(df, height=3.0)
+#plt.show()
 
+
+df.boxplot(column=['Rate','Metascore','Minutes'])
 plt.show()
