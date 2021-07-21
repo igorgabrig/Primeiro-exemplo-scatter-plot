@@ -13,18 +13,21 @@ from sklearn.metrics import classification_report
 print("hello");
 
 ##Importando o data set
-url= ('https://github.com/igorgabrig/Primeiro-exemplo-scatter-plot/blob/main/arq/db.xlsx?raw=true')
+url= ('https://github.com/igorgabrig/Primeiro-exemplo-scatter-plot/blob/main/arq/hurt.xlsx?raw=true')
 df= pd.read_excel(url)
 df.head()
 
-df.info()
+#df.info()
 
-#sns.pairplot(df, height=3.0)
+#sns.pairplot(df, height=1.0)
 #plt.show()
 
+#fig  = px.scatter(df, x = 'cholesterol', y = 'max HR', log_x = True, width = 800)
+#fig.show()
 
-#df.boxplot(column='Rate')
-#plt.show()
+
+df.boxplot(column=['rest SBP','cholesterol','max HR'])
+plt.show()
 
 #df.boxplot(column='Metascore')
 #plt.show()
@@ -48,10 +51,9 @@ df.info()
 
 #plt.show()
 
-iris = load_iris()
-
-X = df.drop(['Rate','Metascore'], axis = 1).values
-y = df.values
+"""
+X = df['cholesterol','rest SBP']
+y = df[['diameter narrowing']]
 
 X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.30, random_state=13)
 
@@ -63,3 +65,5 @@ clf.fit(X_train, y_train)
 y_pred = clf.predict(X_test)
 
 print(classification_report(y_test, y_pred, target_names=iris.target_names))
+
+"""
